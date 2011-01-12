@@ -35,6 +35,8 @@ do
 		CPKG=$pkg
 	else
 		ALL=`echo $pkg | grep "\*" | wc -l`
+		SUP=""
+		LNK=""
 		if [[ $ALL -eq 1 ]]; then
 			pkg=`echo $pkg | sed s/"*"/"allpkg"/`
 			SUP=", color=red, style = filled"
