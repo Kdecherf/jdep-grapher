@@ -37,9 +37,11 @@ do
 		ALL=`echo $pkg | grep "\*" | wc -l`
 		if [[ $ALL -eq 1 ]]; then
 			pkg=`echo $pkg | sed s/"*"/"allpkg"/`
+			SUP=", color=red, style = filled"
+                        LNK=" [color=red]"
 		fi
-		echo "$pkg [label=\"$name\"];"
-		echo "$CPKG -> $pkg;"
+		echo "$pkg [label=\"$name\"$SUP];"
+		echo "$CPKG -> $pkg $LNK;"
 	fi
 done < $GREP | sort -u > $COMPUTE
 
