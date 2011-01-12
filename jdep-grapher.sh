@@ -1,8 +1,13 @@
 #!/bin/bash
 
-GRAPH="graph.png"
-DIR="mysrcfolder"
-EXCLUDE="" # Puts an expression for grep to exclude some nodes
+GRAPH=$1
+DIR=$2
+EXCLUDE=$3 # Puts an expression for grep to exclude some nodes
+
+if [[ -z $GRAPH || -z $DIR ]]; then
+	echo "Usage: ./jdep-grapher.sh imagefilename.png foldertoparse [excludes]"
+	exit 0
+fi
 
 # List files
 echo "Listing files to parse..."
