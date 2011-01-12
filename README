@@ -1,0 +1,29 @@
+README of JDep-Grapher
+======================
+
+(c) Kevin Decherf, <kdecherf@gmail.com>, 2010
+This application is licenced under GNU General Public License, Version 3.0
+http://www.gnu.org/licenses/gpl-3.0-standalone.html
+
+About
+-----
+JDep-Grapher is a simple bash tool to generate dependencies graph for Java projects.
+
+
+Install
+-------
+You can use jdep-grapher.sh on-the-fly or copy it in /usr/local/bin or eq (~/bin, ...).
+DEPENDENCY: You need GraphViz installed on your machine.
+
+
+How to use
+----------
+./jdep-grapher.sh graph parse [exclude]
+graph: image filename for the generated graph
+parse: folder to parse
+exclude: grep extended expression to exclude some elements (exclude packages, etc ...)
+
+Informations
+------------
+- The script will only grep files for 'import' and 'package' lines ;
+- All-inclusion packages (name.*) are filled in red ;
